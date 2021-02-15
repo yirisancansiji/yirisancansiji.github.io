@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yirisancansiji.github.io</id>
     <title>一日三餐 四季</title>
-    <updated>2021-02-15T05:13:23.362Z</updated>
+    <updated>2021-02-15T05:18:08.351Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yirisancansiji.github.io"/>
     <link rel="self" href="https://yirisancansiji.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://yirisancansiji.github.io/images/avatar.png</logo>
     <icon>https://yirisancansiji.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 一日三餐 四季</rights>
+    <entry>
+        <title type="html"><![CDATA[Win10 截图快捷键]]></title>
+        <id>https://yirisancansiji.github.io/post/win10-jie-tu-kuai-jie-jian/</id>
+        <link href="https://yirisancansiji.github.io/post/win10-jie-tu-kuai-jie-jian/">
+        </link>
+        <updated>2021-02-15T05:14:43.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="win10-截图快捷键">Win10 截图快捷键</h2>
+<pre><code>'田' + Shift + s
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[git status 中文显示]]></title>
         <id>https://yirisancansiji.github.io/post/git-status-zhong-wen-xian-shi/</id>
