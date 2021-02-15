@@ -2,24 +2,24 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | 一日三餐 四季</title>
+<title>linux ubuntu openjdk安装 | 一日三餐 四季</title>
 <link rel="shortcut icon" href="https://yirisancansiji.github.io/favicon.ico?v=1613364423436">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yirisancansiji.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | 一日三餐 四季 - Atom Feed" href="https://yirisancansiji.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="linux ubuntu openjdk安装 | 一日三餐 四季 - Atom Feed" href="https://yirisancansiji.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
+    <meta name="description" content="查询openjdk版本
+以ubuntu16.04为例
 
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
-    <meta name="keywords" content="" />
+apt search openjdk 
+16.04的版本库仓中包含 openjdk-8-jdk, openjdk-9-jdk两个版本
+
+安装openjdk版本
+sudo apt ins..." />
+    <meta name="keywords" content="Java" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -81,37 +81,66 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              linux ubuntu openjdk安装
             </h2>
             <div class="post-info">
               <span>
-                2019-01-25
+                2021-02-15
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
+              
+                <a href="https://yirisancansiji.github.io/tag/mymPj8fnP/" class="post-tag">
+                  # Java
+                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                <h2 id="查询openjdk版本">查询openjdk版本</h2>
+<pre><code>以ubuntu16.04为例
+
+apt search openjdk 
+16.04的版本库仓中包含 openjdk-8-jdk, openjdk-9-jdk两个版本
+</code></pre>
+<h2 id="安装openjdk版本">安装openjdk版本</h2>
+<pre><code>sudo apt install openjdk-9-jdk
+</code></pre>
+<h2 id="安装openjdk报错">安装openjdk报错</h2>
+<pre><code>dpkg: error processing archive /var/cache/apt/archives/openjdk-9-jdk_9~b114-0ubuntu1_amd64.deb (--unpack):
+ trying to overwrite '/usr/lib/jvm/java-9-openjdk-amd64/include/linux/jawt_md.h', which is also in package openjdk-9-jdk-headless:amd64 9~b114-0ubuntu1
+Errors were encountered while processing:
+ /var/cache/apt/archives/openjdk-9-jdk_9~b114-0ubuntu1_amd64.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+</code></pre>
+<h2 id="处理安装报错">处理安装报错</h2>
+<pre><code>sudo dpkg -i --force-overwrite /var/cache/apt/archives/openjdk-9-jdk_9~b114-0ubuntu1_amd64.deb
+
+再次运行
+sudo apt install openjdk-9-jdk
+</code></pre>
+<h2 id="查看openjdk安装版本">查看openjdk安装版本</h2>
+<pre><code>~$ java -version
+openjdk version &quot;9-internal&quot;
+OpenJDK Runtime Environment (build 9-internal+0-2016-04-14-195246.buildd.src)
+OpenJDK 64-Bit Server VM (build 9-internal+0-2016-04-14-195246.buildd.src, mixed mode)
+</code></pre>
+<h2 id="其他">其他</h2>
+<p><a href="https://blog.csdn.net/qq_39683682/article/details/113802289">java程序 hello world</a></p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2openjdk%E7%89%88%E6%9C%AC">查询openjdk版本</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85openjdk%E7%89%88%E6%9C%AC">安装openjdk版本</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85openjdk%E6%8A%A5%E9%94%99">安装openjdk报错</a></li>
+<li><a href="#%E5%A4%84%E7%90%86%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99">处理安装报错</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8Bopenjdk%E5%AE%89%E8%A3%85%E7%89%88%E6%9C%AC">查看openjdk安装版本</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96">其他</a></li>
 </ul>
 </li>
 </ul>
@@ -121,6 +150,15 @@
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://yirisancansiji.github.io/post/linux-java-ban-ben-hello-world/">
+              <h3 class="post-title">
+                linux java版本 Hello World
+              </h3>
+            </a>
+          </div>
         
 
         
