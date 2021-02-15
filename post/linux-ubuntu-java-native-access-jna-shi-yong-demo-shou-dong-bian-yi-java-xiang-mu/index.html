@@ -1,13 +1,26 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>linux ubuntu java-native-access (jna) 使用 demo (手动编译java项目) | 一日三餐 四季</title>
-<link rel="shortcut icon" href="https://yirisancansiji.github.io/favicon.ico?v=1613400221449">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://yirisancansiji.github.io/favicon.ico?v=1613401427933">
 <link rel="stylesheet" href="https://yirisancansiji.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="linux ubuntu java-native-access (jna) 使用 demo (手动编译java项目) | 一日三餐 四季 - Atom Feed" href="https://yirisancansiji.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
@@ -15,86 +28,81 @@
 ​		java开发中对效率要求比较高时，为提高效率，往往会采用 c\c++ 的方式进行交互，如：音视频开发中，通常使用 jni 的方式调用 c 接口，自己编写native方法。
 jna 也是..." />
     <meta name="keywords" content="Java" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://yirisancansiji.github.io">
-  <img class="avatar" src="https://yirisancansiji.github.io/images/avatar.png?v=1613400221449" alt="">
-  </a>
-  <h1 class="site-title">
-    一日三餐 四季
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://yirisancansiji.github.io">
+        <img src="https://yirisancansiji.github.io/images/avatar.png?v=1613401427933" class="site-logo">
+        <h1 class="site-title">一日三餐 四季</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yirisancansiji.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              linux ubuntu java-native-access (jna) 使用 demo (手动编译java项目)
-            </h2>
-            <div class="post-info">
-              <span>
-                2021-02-15
-              </span>
-              <span>
-                6 min read
-              </span>
-              
-                <a href="https://yirisancansiji.github.io/tag/mymPj8fnP/" class="post-tag">
-                  # Java
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">linux ubuntu java-native-access (jna) 使用 demo (手动编译java项目)</h2>
+            <div class="post-date">2021-02-15</div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <h2 id="java-native-access-jna">java-native-access （jna）</h2>
+            <div class="post-content" v-pre>
+              <h2 id="java-native-access-jna">java-native-access （jna）</h2>
 <p>​		java开发中对效率要求比较高时，为提高效率，往往会采用 c\c++ 的方式进行交互，如：音视频开发中，通常使用 jni 的方式调用 c 接口，自己编写native方法。</p>
 <p>jna 也是基于 jni 的技术的，只是封装了部分的操作，类似 golang 中的 cgo，目的是使调用c接口更加方便，不需要自己去编写native方法了。</p>
 <h2 id="新建java项目初始化环境">新建java项目，初始化环境</h2>
@@ -253,142 +261,82 @@ Aborted
 <p><a href="https://blog.csdn.net/weixin_44413832/article/details/113759446">jna调用demo</a></p>
 <p><a href="https://www.coder.work/article/1410839">jna运行出错</a></p>
 
-              </div>
-              <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#java-native-access-jna">java-native-access （jna）</a></li>
-<li><a href="#%E6%96%B0%E5%BB%BAjava%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96%E7%8E%AF%E5%A2%83">新建java项目，初始化环境</a><br>
-*
-<ul>
-<li><a href="#%E6%95%B4%E4%BD%93%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84%E5%A6%82%E4%B8%8B">整体项目结构如下：</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85jna">下载安装JNA</a></li>
-<li><a href="#%E7%BC%96%E5%86%99java%E4%BB%A3%E7%A0%81">编写java代码</a></li>
-<li><a href="#%E7%BC%96%E8%AF%91java%E6%96%87%E4%BB%B6">编译java文件</a><br>
-*
-<ul>
-<li><a href="#%E7%BC%96%E8%AF%91appjava">编译App.java</a></li>
-<li><a href="#%E7%BC%96%E8%AF%91%E8%AD%A6%E5%91%8A">编译警告</a></li>
-<li><a href="#%E7%BC%96%E8%AF%91%E8%BE%93%E5%87%BA">编译输出</a></li>
-</ul>
-</li>
-<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">配置环境变量</a></li>
-<li><a href="#%E8%BF%90%E8%A1%8Cjna%E7%A8%8B%E5%BA%8F">运行JNA程序</a><br>
-*
-<ul>
-<li><a href="#%E8%BF%90%E8%A1%8C%E5%87%BA%E9%94%99">运行出错</a></li>
-<li><a href="#%E5%9B%9E%E5%88%B0-java_jnasrc%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C">回到 java_jna/src编译运行</a></li>
-<li><a href="#%E8%BF%90%E8%A1%8C%E5%87%BA%E9%94%99-2">运行出错</a></li>
-</ul>
-</li>
-<li><a href="#%E6%AD%A3%E7%A1%AE%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F">正确的运行方式</a>
-<ul>
-<li><a href="#%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C">输出结果</a></li>
-<li><a href="#%E5%B7%B2%E7%9F%A5%E5%BC%82%E5%B8%B8%E9%97%AE%E9%A2%98">已知异常问题</a></li>
-</ul>
-</li>
-<li><a href="#%E5%85%B6%E4%BB%96">其他</a></li>
-</ul>
-</li>
-</ul>
-
-              </div>
             </div>
-          </article>
-        </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://yirisancansiji.github.io/tag/mymPj8fnP/" class="tag">
+                    Java
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://yirisancansiji.github.io/post/linux-ubuntu-openjdk-an-zhuang/">
+                  <h3 class="post-title">
+                    linux ubuntu openjdk安装
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://yirisancansiji.github.io/post/linux-ubuntu-openjdk-an-zhuang/">
-              <h3 class="post-title">
-                linux ubuntu openjdk安装
-              </h3>
-            </a>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
-        
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    proxy: 'https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token',
-    clientID: 'f8d5174d2f15c8be76eb',
-    clientSecret: '9c64939a4e350bd83d2ba65d497a2c4dd1e3eb50',
-    repo: 'yirisancansiji.github.io',
-    owner: 'yirisancansiji',
-    admin: ['yirisancansiji'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-          
-
-          
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://yirisancansiji.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
+        </div>
       </div>
     </div>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
-      hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+      var gitalk = new Gitalk({
+        clientID: 'f8d5174d2f15c8be76eb',
+        clientSecret: '9c64939a4e350bd83d2ba65d497a2c4dd1e3eb50',
+        repo: 'yirisancansiji.github.io',
+        owner: 'yirisancansiji',
+        admin: ['yirisancansiji'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
+      gitalk.render('gitalk-container')
 
     </script>
+  
+
+  
+
+
+
+
   </body>
 </html>
