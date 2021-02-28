@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>linux java版本 Hello World | 一日三餐 四季</title>
+<title>win10 linux子系统 wsl2更新 | 一日三餐 四季</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,14 +24,17 @@
 
 
 
-    <meta name="description" content="linux java版本 Hello World
+    <meta name="description" content="启用虚拟机功能
 
-验证java环境安装情况
 
-新建 main.java 文件，注意class类型与文件名保持一致
-public class main {
-        public static void..." />
-    <meta name="keywords" content="Java" />
+安装 WSL 2 之前，必须启用“虚拟机平台”可选功能
+
+
+以管理员身份打开 PowerShell 并运行：
+
+
+PS C:\WINDOWS\system32&gt; dism.exe /online /enable-f..." />
+    <meta name="keywords" content="WSL,Win10" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,37 +105,68 @@ public class main {
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">linux java版本 Hello World</h2>
-            <div class="post-date">2021-02-15</div>
+            <h2 class="post-title">win10 linux子系统 wsl2更新</h2>
+            <div class="post-date">2021-02-28</div>
             
             <div class="post-content" v-pre>
-              <h2 id="linux-java版本-hello-world">linux java版本 Hello World</h2>
+              <h2 id="启用虚拟机功能">启用虚拟机功能</h2>
 <ul>
-<li>验证java环境安装情况</li>
+<li>
+<p>安装 WSL 2 之前，必须启用“虚拟机平台”可选功能</p>
+</li>
+<li>
+<p>以管理员身份打开 PowerShell 并运行：</p>
+</li>
 </ul>
-<p>新建<b> main.java </b>文件，注意class类型与文件名<b>保持一致</b></p>
-<pre><code>public class main {
-        public static void main(String[] args) {
-                System.out.println(&quot;hello java &quot; + args[0]);
-        }
-}
+<pre><code>PS C:\WINDOWS\system32&gt; dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+部署映像服务和管理工具
+版本: 10.0.19041.746
+
+映像版本: 10.0.19042.804
+
+启用一个或多个功能
+[==========================100.0%==========================]
+操作成功完成。
 </code></pre>
-<h2 id="编译mainjava">编译main.java</h2>
-<pre><code>javac main.java
-
-javac 后面直接输入待编译的java文件
+<h2 id="下载-linux-内核更新包">下载 Linux 内核更新包</h2>
+<p>https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi</p>
+<ul>
+<li>运行上一步中下载的更新包，按照提示安装。</li>
+</ul>
+<h2 id="将-wsl-2-设置为默认版本">将 WSL 2 设置为默认版本</h2>
+<pre><code>wsl --set-default-version 2
 </code></pre>
-<h2 id="编译生成-class-文件">编译生成 class 文件</h2>
-<pre><code>ls
+<h2 id="版本设置为-wsl-2">版本设置为 WSL 2</h2>
+<ul>
+<li>查看当前版本</li>
+</ul>
+<pre><code>wsl -l -v 
 
-main.class  main.java
+PS C:\WINDOWS\system32&gt; wsl -l -v
+  NAME            STATE           VERSION
+* Ubuntu-18.04    Stopped         1
+  Ubuntu-16.04    Stopped         1
 </code></pre>
-<h2 id="运行-java-程序">运行 java 程序</h2>
-<pre><code>java main 2021
+<ul>
+<li>设置wsl 2版本</li>
+</ul>
+<pre><code>wsl --set-version &lt;distribution name&gt; &lt;versionNumber&gt;
 
-hello java 2021
+wsl --set-version Ubuntu-18.04 2
 
-注意运行程序时不需要加是 .class 后缀
+正在进行转换，这可能需要几分钟时间...
+有关与 WSL 2 的主要区别的信息，请访问 https://aka.ms/wsl2
+转换完成。
+PS C:\WINDOWS\system32&gt;
+
+其他版本可类比操作，转换时需注意，安装wsl的磁盘分区应有充足的磁盘空间
+</code></pre>
+<h2 id="其他">其他</h2>
+<ul>
+<li>更新完成后，默认用户修改成 root 后，可使用以下命令配置默认用户</li>
+</ul>
+<pre><code>Ubuntu-18.04 config --default-user &lt;username&gt;
 </code></pre>
 <p>Copyright (c) 2021 yirisancansiji  All rights reserved</p>
 
@@ -140,12 +174,25 @@ hello java 2021
             
               <div class="tag-container">
                 
-                  <a href="https://yirisancansiji.github.io/tag/mymPj8fnP/" class="tag">
-                    Java
+                  <a href="https://yirisancansiji.github.io/tag/4oBBQLAjN/" class="tag">
+                    WSL
+                  </a>
+                
+                  <a href="https://yirisancansiji.github.io/tag/Z5-W3GC0M/" class="tag">
+                    Win10
                   </a>
                 
               </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://yirisancansiji.github.io/post/win10-bi-ji-ben-gong-xiang-wifi-re-dian/">
+                  <h3 class="post-title">
+                    Win10 笔记本 共享 wifi 热点
+                  </h3>
+                </a>
+              </div>
             
 
             

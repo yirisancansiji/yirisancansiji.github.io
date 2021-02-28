@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>linux java版本 Hello World | 一日三餐 四季</title>
+<title>Win10 笔记本 共享 wifi 热点 | 一日三餐 四季</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,14 +24,13 @@
 
 
 
-    <meta name="description" content="linux java版本 Hello World
+    <meta name="description" content="Win10 笔记本 共享 wifi 热点
+管理员权限打开 PowerShell ('田'牌右键)
+Windows PowerShell
+版权所有 (C) Microsoft Corporation。保留所有权利。
 
-验证java环境安装情况
-
-新建 main.java 文件，注意class类型与文件名保持一致
-public class main {
-        public static void..." />
-    <meta name="keywords" content="Java" />
+尝试新的跨平台 Powe..." />
+    <meta name="keywords" content="Win10" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,50 +101,60 @@ public class main {
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">linux java版本 Hello World</h2>
-            <div class="post-date">2021-02-15</div>
+            <h2 class="post-title">Win10 笔记本 共享 wifi 热点</h2>
+            <div class="post-date">2021-02-28</div>
             
             <div class="post-content" v-pre>
-              <h2 id="linux-java版本-hello-world">linux java版本 Hello World</h2>
-<ul>
-<li>验证java环境安装情况</li>
-</ul>
-<p>新建<b> main.java </b>文件，注意class类型与文件名<b>保持一致</b></p>
-<pre><code>public class main {
-        public static void main(String[] args) {
-                System.out.println(&quot;hello java &quot; + args[0]);
-        }
-}
-</code></pre>
-<h2 id="编译mainjava">编译main.java</h2>
-<pre><code>javac main.java
+              <h2 id="win10-笔记本-共享-wifi-热点">Win10 笔记本 共享 wifi 热点</h2>
+<p>管理员权限打开 PowerShell ('田'牌右键)</p>
+<pre><code>Windows PowerShell
+版权所有 (C) Microsoft Corporation。保留所有权利。
 
-javac 后面直接输入待编译的java文件
-</code></pre>
-<h2 id="编译生成-class-文件">编译生成 class 文件</h2>
-<pre><code>ls
+尝试新的跨平台 PowerShell https://aka.ms/pscore6
 
-main.class  main.java
+PS C:\WINDOWS\system32&gt; netsh wlan set hostednetwork mode=allow ssid=WIFI key=12345678
 </code></pre>
-<h2 id="运行-java-程序">运行 java 程序</h2>
-<pre><code>java main 2021
-
-hello java 2021
-
-注意运行程序时不需要加是 .class 后缀
+<p>ssid: 是共享热点的名称</p>
+<p>key: 是共享热点的密码，注意修改安全性更高的密码</p>
+<p>输入回车键执行，输出如下：</p>
+<pre><code>承载网络模式已设置为允许。
+已成功更改承载网络的 SSID。
+已成功更改托管网络的用户密钥密码。
 </code></pre>
+<p>启动wifi</p>
+<pre><code>PS C:\WINDOWS\system32&gt; netsh wlan start hostednetwork
+</code></pre>
+<p>回车键</p>
+<pre><code>已启动承载网络。
+
+PS C:\WINDOWS\system32&gt;
+</code></pre>
+<p>此时可以搜索到wifi，但是不能够上网。</p>
+<h2 id="打开更改适配器选项">打开'更改适配器选项'</h2>
+<p>'田'牌右键---&gt;选择 &quot;网络连接&quot; ----&gt; 选择 &quot;更改适配器选项&quot; ---&gt; 选择当前可以连接网络的适配器 ---&gt;</p>
+<p>右键---&gt;选择 &quot;属性&quot; ---&gt; 选择 &quot;共享&quot; 选项栏 ----&gt; 勾选 &quot;允许其他网络用户&quot; ---&gt; 选择刚才的wifi热点设备名</p>
+<p>---&gt;确定保存，到此连接该热点的设备就可以上网了</p>
 <p>Copyright (c) 2021 yirisancansiji  All rights reserved</p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://yirisancansiji.github.io/tag/mymPj8fnP/" class="tag">
-                    Java
+                  <a href="https://yirisancansiji.github.io/tag/Z5-W3GC0M/" class="tag">
+                    Win10
                   </a>
                 
               </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://yirisancansiji.github.io/post/ffmpeg-tu-pian-tian-jia-wen-zi-shui-yin/">
+                  <h3 class="post-title">
+                    FFmpeg 图片添加文字水印
+                  </h3>
+                </a>
+              </div>
             
 
             

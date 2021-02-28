@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>linux java版本 Hello World | 一日三餐 四季</title>
+<title>FFmpeg 图片添加文字水印 | 一日三餐 四季</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,14 +24,10 @@
 
 
 
-    <meta name="description" content="linux java版本 Hello World
-
-验证java环境安装情况
-
-新建 main.java 文件，注意class类型与文件名保持一致
-public class main {
-        public static void..." />
-    <meta name="keywords" content="Java" />
+    <meta name="description" content="FFmpeg 图片添加文字水印
+建议使用 git 中 bash shell 工具执行命令
+ffmpeg.exe -i image-20210215130004615.png -vf drawtext=fontfile=../SourceHa..." />
+    <meta name="keywords" content="FFmpeg" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,50 +98,107 @@ public class main {
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">linux java版本 Hello World</h2>
-            <div class="post-date">2021-02-15</div>
+            <h2 class="post-title">FFmpeg 图片添加文字水印</h2>
+            <div class="post-date">2021-02-28</div>
             
             <div class="post-content" v-pre>
-              <h2 id="linux-java版本-hello-world">linux java版本 Hello World</h2>
-<ul>
-<li>验证java环境安装情况</li>
-</ul>
-<p>新建<b> main.java </b>文件，注意class类型与文件名<b>保持一致</b></p>
-<pre><code>public class main {
-        public static void main(String[] args) {
-                System.out.println(&quot;hello java &quot; + args[0]);
-        }
-}
+              <h2 id="ffmpeg-图片添加文字水印">FFmpeg 图片添加文字水印</h2>
+<p>建议使用 git 中 bash shell 工具执行命令</p>
+<pre><code class="language-shell">ffmpeg.exe -i image-20210215130004615.png -vf drawtext=fontfile=../SourceHanSans.ttc:fontcolor=white:fontsize=20:text='©一日三餐 四季':x=w-tw-10:y=10:shadowy=2 1.png
 </code></pre>
-<h2 id="编译mainjava">编译main.java</h2>
-<pre><code>javac main.java
-
-javac 后面直接输入待编译的java文件
-</code></pre>
-<h2 id="编译生成-class-文件">编译生成 class 文件</h2>
-<pre><code>ls
-
-main.class  main.java
-</code></pre>
-<h2 id="运行-java-程序">运行 java 程序</h2>
-<pre><code>java main 2021
-
-hello java 2021
-
-注意运行程序时不需要加是 .class 后缀
-</code></pre>
+<h3 id="参数说明">参数说明</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fontfile</td>
+<td>指定字体</td>
+<td>最好字体文件复制到当前目录，window平台指定的C盘目录提示找不到</td>
+</tr>
+<tr>
+<td>fontcolor</td>
+<td>字体颜色</td>
+<td></td>
+</tr>
+<tr>
+<td>fontsize</td>
+<td>字体大小</td>
+<td></td>
+</tr>
+<tr>
+<td>text</td>
+<td>水印内容</td>
+<td></td>
+</tr>
+<tr>
+<td>x、y</td>
+<td>水印内容的相对坐标</td>
+<td>相对于图片左上角</td>
+</tr>
+<tr>
+<td>shadowy</td>
+<td>增加阴影效果</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="坐标参数">坐标参数</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x=10:y=10</td>
+<td>自定义相对坐标</td>
+<td>预留10像素间隙</td>
+</tr>
+<tr>
+<td>x=w-tw-10:y=10</td>
+<td>右上角</td>
+<td>w 图片的宽 <br />tw 水印内容的宽</td>
+</tr>
+<tr>
+<td>x=w-tw-10:y=h-th-10</td>
+<td>右下角</td>
+<td>类比</td>
+</tr>
+</tbody>
+</table>
+<h2 id="其他">其他</h2>
+<p><a href="https://www.gyan.dev/ffmpeg/builds/">ffmpeg下载</a></p>
+<p><a href="https://yuv420.blog.csdn.net/article/details/78500975">ffmpeg 添加水印 时间值</a></p>
 <p>Copyright (c) 2021 yirisancansiji  All rights reserved</p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://yirisancansiji.github.io/tag/mymPj8fnP/" class="tag">
-                    Java
+                  <a href="https://yirisancansiji.github.io/tag/Xg7ySvtS4/" class="tag">
+                    FFmpeg
                   </a>
                 
               </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://yirisancansiji.github.io/post/win10-jie-tu-kuai-jie-jian/">
+                  <h3 class="post-title">
+                    Win10 截图快捷键
+                  </h3>
+                </a>
+              </div>
             
 
             
