@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yirisancansiji.github.io</id>
     <title>一日三餐 四季</title>
-    <updated>2021-02-28T01:13:20.857Z</updated>
+    <updated>2021-02-28T01:16:24.261Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yirisancansiji.github.io"/>
     <link rel="self" href="https://yirisancansiji.github.io/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://yirisancansiji.github.io/images/avatar.png</logo>
     <icon>https://yirisancansiji.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 一日三餐 四季</rights>
+    <entry>
+        <title type="html"><![CDATA[win10 linux子系统 docker 迁移 路径修改]]></title>
+        <id>https://yirisancansiji.github.io/post/win10-linux-zi-xi-tong-docker-qian-yi-lu-jing-xiu-gai/</id>
+        <link href="https://yirisancansiji.github.io/post/win10-linux-zi-xi-tong-docker-qian-yi-lu-jing-xiu-gai/">
+        </link>
+        <updated>2021-02-28T01:15:40.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="wsl-查看-docker-desktop-版本">wsl 查看 Docker Desktop 版本</h2>
+<pre><code>wsl -l -v
+
+PS C:\WINDOWS\system32&gt; wsl -l -v
+  NAME                   STATE           VERSION
+* docker-desktop         Running         2
+  docker-desktop-data    Running         2
+</code></pre>
+<h2 id="关闭退出docker-关闭-wsl发行版本">关闭退出docker 、关闭 wsl发行版本</h2>
+<pre><code>wsl --shutdown
+</code></pre>
+<h2 id="导出已安装的发行版本">导出已安装的发行版本</h2>
+<pre><code>wsl --export docker-desktop d:\wsl\docker-desktop.tar
+</code></pre>
+<h2 id="注销已导出的发行版本">注销已导出的发行版本</h2>
+<pre><code>wsl --unregister docker-desktop
+</code></pre>
+<h2 id="重新安装已导出的发行版本">重新安装已导出的发行版本</h2>
+<pre><code>wsl --import docker-desktop d:\wsl\docker-desktop d:\wsl\docker-desktop.tar --version 2
+</code></pre>
+<h2 id="删除已导出的发行版本">删除已导出的发行版本</h2>
+<pre><code>删除 d:\wsl\docker-desktop
+</code></pre>
+<p>同理，docker-desktop-data可类比操作，实现的操作方式和wsl迁移类似。</p>
+<h2 id="其他">其他</h2>
+<p><a href="https://blog.csdn.net/qq_39683682/article/details/113801632">wsl 迁移 修改路径</a></p>
+<p>Copyright (c) 2021 yirisancansiji  All rights reserved</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[win10 linux子系统 wsl 迁移 修改路径]]></title>
         <id>https://yirisancansiji.github.io/post/win10-linux-zi-xi-tong-wsl-qian-yi-xiu-gai-lu-jing/</id>
@@ -493,43 +528,6 @@ OpenJDK 64-Bit Server VM (build 9-internal+0-2016-04-14-195246.buildd.src, mixed
 </code></pre>
 <h2 id="其他">其他</h2>
 <p><a href="https://blog.csdn.net/qq_39683682/article/details/113802289">java程序 hello world</a></p>
-<p>Copyright (c) 2021 yirisancansiji  All rights reserved</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[linux java版本 Hello World]]></title>
-        <id>https://yirisancansiji.github.io/post/linux-java-ban-ben-hello-world/</id>
-        <link href="https://yirisancansiji.github.io/post/linux-java-ban-ben-hello-world/">
-        </link>
-        <updated>2021-02-15T04:30:35.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="linux-java版本-hello-world">linux java版本 Hello World</h2>
-<ul>
-<li>验证java环境安装情况</li>
-</ul>
-<p>新建<b> main.java </b>文件，注意class类型与文件名<b>保持一致</b></p>
-<pre><code>public class main {
-        public static void main(String[] args) {
-                System.out.println(&quot;hello java &quot; + args[0]);
-        }
-}
-</code></pre>
-<h2 id="编译mainjava">编译main.java</h2>
-<pre><code>javac main.java
-
-javac 后面直接输入待编译的java文件
-</code></pre>
-<h2 id="编译生成-class-文件">编译生成 class 文件</h2>
-<pre><code>ls
-
-main.class  main.java
-</code></pre>
-<h2 id="运行-java-程序">运行 java 程序</h2>
-<pre><code>java main 2021
-
-hello java 2021
-
-注意运行程序时不需要加是 .class 后缀
-</code></pre>
 <p>Copyright (c) 2021 yirisancansiji  All rights reserved</p>
 ]]></content>
     </entry>
